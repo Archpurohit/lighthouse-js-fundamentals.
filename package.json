@@ -1,0 +1,25 @@
+{
+  "name": "lighthouse",
+  "version": "1.0.0",
+  "description": "Hello world!",
+  "main": "chorus-for.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Archpurohit/lighthouse-js-fundamentals..git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Archpurohit/lighthouse-js-fundamentals./issues"
+  },
+  "homepage": "https://github.com/Archpurohit/lighthouse-js-fundamentals.#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.25.0",
+    "eslint-plugin-react": "^7.31.10"
+  }
+}

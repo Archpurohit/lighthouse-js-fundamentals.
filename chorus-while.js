@@ -7,6 +7,6 @@ while (repeat < 10) {
 }
 console.log("Until the sun comes up!");
 
-git add chorus-while.js
-git commit -m "Use a while loop to repeat a chorus line" 
+
+
 
