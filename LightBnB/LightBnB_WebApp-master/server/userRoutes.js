@@ -4,7 +4,8 @@ module.exports = function(router, database) {
 
   // Create a new user
   router.post('/', (req, res) => {
-    const user = req.body;
+    let user = req.body;
+     user = JSON.parse(JSON.stringify(user));
     user.password = bcrypt.hashSync(user.password, 12);
     database.addUser(user)
     .then(user => {
@@ -26,6 +27,7 @@ module.exports = function(router, database) {
   const login =  function(email, password) {
     return database.getUserWithEmail(email)
     .then(user => {
+      const hash = bcrypt.hashSync("password", 12);
       if (bcrypt.compareSync(password, user.password)) {
         return user;
       }
@@ -47,7 +49,7 @@ module.exports = function(router, database) {
       })
       .catch(e => res.send(e));
   });
-  
+
   router.post('/logout', (req, res) => {
     req.session.userId = null;
     res.send({});
@@ -66,7 +68,7 @@ module.exports = function(router, database) {
           res.send({error: "no user with that id"});
           return;
         }
-    
+
         res.send({user: {name: user.name, email: user.email, id: userId}});
       })
       .catch(e => res.send(e));
